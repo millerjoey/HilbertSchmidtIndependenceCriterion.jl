@@ -3,7 +3,7 @@ module HilbertSchmidtIndependenceCriterion
 	using StatsFuns, Distances
 
   # load Base modules
-  using Statistics, LinearAlgebra
+  using Statistics, LinearAlgebra, Random
 
 	# includes
 	include("common.jl")
