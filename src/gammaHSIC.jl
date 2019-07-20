@@ -1,10 +1,11 @@
 """
-    gammaHSIC(X::Array{T, 2}, Y::Array{T, 2})
+    gammaHSIC(X::Array{T}, Y::Array{T})
 
 """
-function gammaHSIC(X::Array{T, 2}, Y::Array{T, 2}; α = 0.1, randomSubSet = 100, kernelSize = -1) where T <: Real
 
-	M = size(X)[1]
+function gammaHSIC(X::Array{T}, Y::Array{T}; randomSubSet = 100, kernelSize = -1) where {T<:Real}
+
+	M = length(X)
 
 	# get kernel sizes
 	if kernelSize == -1
@@ -43,6 +44,6 @@ function gammaHSIC(X::Array{T, 2}, Y::Array{T, 2}; α = 0.1, randomSubSet = 100,
 	al = mHSIC^2 / varHSIC
 	bet = varHSIC*M ./ mHSIC
 
-	return (testStat, gammainvcdf(al[1], bet[1], 1 - α))
+	return 1 - gammacdf(al[1], bet[1], testStat)
 
 end
