@@ -3,7 +3,7 @@
 
 """
 
-function gammaHSIC(X::Array{T}, Y::Array{T}; randomSubSet = 100, kernelSize = -1) where {T<:Real}
+function gammaHSIC(X::Vector{T}, Y::Vector{T}; randomSubSet = 100, kernelSize = -1) where {T<:Real}
 
 	M = length(X)
 
