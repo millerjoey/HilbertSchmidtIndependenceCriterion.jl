@@ -4,7 +4,7 @@
 """
 
 function gammaHSIC(X::AbstractVector, Y::AbstractVector; randomSubSet = 100, kernelSize = -1)
-
+	T = promote_type(eltype(X), eltype(Y))
 	M = length(X)
 
 	# get kernel sizes
