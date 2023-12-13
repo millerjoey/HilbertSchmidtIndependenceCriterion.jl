@@ -1,9 +1,9 @@
 """
-    gammaHSIC(X::Vector{T}, Y::Vector{T})
+    gammaHSIC(X::AbstractVector, Y::AbstractVector)
 
 """
 
-function gammaHSIC(X::Vector{T}, Y::Vector{T}; randomSubSet = 100, kernelSize = -1) where {T<:Real}
+function gammaHSIC(X::AbstractVector, Y::AbstractVector; randomSubSet = 100, kernelSize = -1)
 
 	M = length(X)
 
