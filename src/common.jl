@@ -1,9 +1,9 @@
 """
-    estimateKernelSize{T <: Real}(X::Array{T}; sampleSize = 100)
+    estimateKernelSize(X::AbstractArray; sampleSize = 100)
 
     Estimate kernel size by taking median distance between points.
 """
-function estimateKernelSize(X::Array{T}; sampleSize = 100) where T <: Real
+function estimateKernelSize(X::AbstractArray; sampleSize = 100)
 
 	M = length(X)
 
